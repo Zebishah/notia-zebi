@@ -4,16 +4,11 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 var cors = require('cors')
-const allowedOrigins = ['https://notia-frontend.vercel.app'];
-app.use(cors({
-    origin: function (origin, callback) {
-        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    }
-}));
+var corsOptions = {
+    origin: "https://notia-frontend.vercel.app",
+    Credential: true
+};
+app.use(cors(corsOptions))
 app.use(express.json())
 const port = 5000;
 connectDB();
