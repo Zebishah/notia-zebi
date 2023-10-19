@@ -10,7 +10,12 @@ let jwt_secret = process.env.JWT_SECRET;
 let success = null;
 let e_success = true;
 router.post(
-      "/signUp",
+      "/signUp", app.use((req, res, next) => {
+            res.header('Access-Control-Allow-Origin', 'https://notia-frontend.vercel.app');
+            res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+            res.header('Access-Control-Allow-Headers', 'Content-Type');
+            next();
+      }),
       [
             body("name", "Please enter a valid name").isLength({ max: 14 }),
             body("Email", "Please enter a valid Email").isEmail(),
@@ -63,6 +68,13 @@ router.post(
 );
 router.post(
       "/signIn",
+      app.use((req, res, next) => {
+            res.header('Access-Control-Allow-Origin', 'https://notia-frontend.vercel.app');
+            res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+            res.header('Access-Control-Allow-Headers', 'Content-Type');
+            next();
+      })
+      ,
       [
 
             body("Email", "Please enter a valid Email").isEmail(),
@@ -128,8 +140,13 @@ router.post(
 
 router.get(
       "/fetchUser",
-
-      async (req, res) => {
+      app.use((req, res, next) => {
+            res.header('Access-Control-Allow-Origin', 'https://notia-frontend.vercel.app');
+            res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+            res.header('Access-Control-Allow-Headers', 'Content-Type');
+            next();
+      })
+      , async (req, res) => {
 
             try {
 
