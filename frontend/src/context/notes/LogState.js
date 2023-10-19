@@ -12,7 +12,6 @@ const LogContexts = (props) => {
     let fetchLogs = async () => {
         const response = await fetch(`${host}/api/auth/fetchUser`, {
             method: "GET",
-            mode: 'no-cors',
             headers: {
                 "Content-Type": "application/json",
             },
@@ -27,7 +26,6 @@ const LogContexts = (props) => {
     let sign_up = async (name, Email, Password) => {
         const response = await fetch(`${host}/api/auth/signUp`, {
             method: "POST",
-            mode: 'no-cors',
             headers: {
                 "Content-Type": "application/json",
             },
@@ -52,7 +50,6 @@ const LogContexts = (props) => {
 
         const response = await fetch(`${host}/api/auth/signIn`, {
             method: "POST",
-            mode: 'no-cors',
             headers: {
                 "Content-Type": "application/json",
             },
