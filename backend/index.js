@@ -4,12 +4,12 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 var cors = require('cors')
-app.use(cors({
-    origin: ["https://notia-frontend.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true
+var corsOptions = {
+    origin: "https://notia-frontend.vercel.app"
+};
 
-}))
+
+app.use(cors(corsOptions))
 app.use(express.json())
 const port = 5000;
 connectDB();
