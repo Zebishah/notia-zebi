@@ -5,7 +5,8 @@ const app = express();
 require('dotenv').config();
 var cors = require('cors')
 var corsOptions = {
-    origin: "https://notia-frontend.vercel.app"
+    origin: "https://notia-frontend.vercel.app",
+    Credential: true
 };
 
 
