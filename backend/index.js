@@ -7,7 +7,7 @@ var cors = require('cors')
 
 app.use(cors(
     {
-        origin: ["https://notia-frontend.vercel.app"],
+        origin: ["https://notia-frontend.vercel.app/SignIn"],
         credentials: true
     }
 ))
