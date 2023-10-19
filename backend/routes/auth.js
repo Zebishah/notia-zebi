@@ -10,13 +10,7 @@ let jwt_secret = process.env.JWT_SECRET;
 let success = null;
 let e_success = true;
 router.post(
-      "/signUp", app.use((req, res, next) => {
-            res.setHeader('Access-Control-Allow-Origin', 'https://notia-frontend.vercel.app');
-            res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-            res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-            res.setHeader('Access-Control-Allow-Credentials', 'true'); // If you need to allow credentials
-            next();
-      }),
+      "/signUp",
       [
             body("name", "Please enter a valid name").isLength({ max: 14 }),
             body("Email", "Please enter a valid Email").isEmail(),
@@ -69,13 +63,6 @@ router.post(
 );
 router.post(
       "/signIn",
-      app.use((req, res, next) => {
-            res.setHeader('Access-Control-Allow-Origin', 'https://notia-frontend.vercel.app');
-            res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-            res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-            res.setHeader('Access-Control-Allow-Credentials', 'true'); // If you need to allow credentials
-            next();
-      }),
       [
 
             body("Email", "Please enter a valid Email").isEmail(),
@@ -141,13 +128,6 @@ router.post(
 
 router.get(
       "/fetchUser",
-      app.use((req, res, next) => {
-            res.setHeader('Access-Control-Allow-Origin', 'https://notia-frontend.vercel.app');
-            res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-            res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-            res.setHeader('Access-Control-Allow-Credentials', 'true'); // If you need to allow credentials
-            next();
-      }),
 
       async (req, res) => {
 
