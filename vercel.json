@@ -1,10 +1,10 @@
 {
    "version": 2,
-   "name": "music-album",
+   "name": "notia-zebi",
    "builds": [
       { "src": "/backend/index.js", "use": "@vercel/node" }
    ],
    "routes": [
-      { "src": "/(.*)", "dest": "/app.js" }
+      { "src": "/backend/(.*)", "dest": "/app.js" }
    ]
 }
